@@ -1,0 +1,158 @@
+{
+  "last_node_id": 6,
+  "last_link_id": 7,
+  "nodes": [
+    {
+      "id": 3,
+      "type": "preview_text",
+      "pos": [
+        2819,
+        752
+      ],
+      "size": [
+        404.8729248046875,
+        371.48577880859375
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 7,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "preview_text"
+      },
+      "widgets_values": [
+        "",
+        "The image depicts a close-up view of two hands gently scooping up water from a body of water. Water is splashing and flowing between the hands and fingers, showing movement and droplets scattering around. The background is slightly blurred, suggesting a natural outdoor setting with greenery and possibly a sunset or sunrise, indicated by the warm golden light. The overall mood of the image is serene and refreshing, evoking a sense of tranquility and connection with nature."
+      ]
+    },
+    {
+      "id": 1,
+      "type": "ComfyUIPixtralLarge",
+      "pos": [
+        2431,
+        751
+      ],
+      "size": [
+        315,
+        154
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            7
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ComfyUIPixtralLarge"
+      },
+      "widgets_values": [
+        "Describe the image",
+        "Enter your Mistral API key here",
+        0.7,
+        4096,
+        1
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 2,
+      "type": "LoadImage",
+      "pos": [
+        2055,
+        751
+      ],
+      "size": [
+        315,
+        314
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "26.png",
+        "image"
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      2,
+      0,
+      1,
+      0,
+      "IMAGE"
+    ],
+    [
+      7,
+      1,
+      0,
+      3,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8769226950000008,
+      "offset": [
+        -1529.9575054573968,
+        -404.2081510809975
+      ]
+    }
+  },
+  "version": 0.4
+}

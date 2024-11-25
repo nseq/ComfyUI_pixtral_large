@@ -1,0 +1,357 @@
+{
+  "last_node_id": 13,
+  "last_link_id": 14,
+  "nodes": [
+    {
+      "id": 7,
+      "type": "MultiImagesInput",
+      "pos": [
+        2150,
+        751
+      ],
+      "size": [
+        210,
+        122
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image_1",
+          "type": "IMAGE",
+          "link": 9,
+          "shape": 7
+        },
+        {
+          "name": "image_2",
+          "type": "IMAGE",
+          "link": 10,
+          "shape": 7
+        },
+        {
+          "name": "image_3",
+          "type": "IMAGE",
+          "link": 11
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            8
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        3,
+        null
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 8,
+      "type": "LoadImage",
+      "pos": [
+        1784,
+        1145
+      ],
+      "size": [
+        315,
+        314
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            11
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "Cyberware_-_Flux_e000005_01_20240831021434.png",
+        "image"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "LoadImage",
+      "pos": [
+        1428,
+        940
+      ],
+      "size": [
+        315,
+        314
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            10
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "M60WSPCHFBXQWT3T8V9B6RH7E0.jpeg",
+        "image"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "LoadImage",
+      "pos": [
+        1784,
+        750
+      ],
+      "size": [
+        315,
+        314
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            9
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "g7.jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 13,
+      "type": "String Literal",
+      "pos": [
+        2164,
+        1040
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            14
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "String Literal"
+      },
+      "widgets_values": [
+        "מה המכנה המשותף של כל התמונות?"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "preview_text",
+      "pos": [
+        2819,
+        752
+      ],
+      "size": [
+        501.6430358886719,
+        410.9399719238281
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 7,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "preview_text"
+      },
+      "widgets_values": [
+        "",
+        "המכנה המשותף של כל התמונות הוא הקשר לגיימינג ותרבות המשחקים.\n\n1. בתמונה הראשונה, רואים שתי נשים משחקות במשחק וידאו עם מכשירי בקרה. זהו הקשר הברור ביותר לגיימינג.\n2. התמונה השנייה היא של אדם שלבוש בציוד קיברנטי ופוטוריסטי. האדם נראה כאילו הוא נכנס לעולם וירטואלי, מה שיכול לשמש כהתייחסות למשחקים בתוכנה ובמציאות מדומה (VR).\n3. התמונה השלישית מראה אישה עם ציוד טכנולוגי על הראש והגוף. גם כאן היא נראית כמי שמשתתפת בעולם וירטואלי או משחק מתקדם, כפי שיכול להיות במשחק מציאות מדומה.\n\nכל התמונות מערבות אנשים או דמויות שמשתתפות בפעילות הקשורה לגיימינג, בין אם במשחקי וידאו רגילים או בעולמות וירטואליים ומתקדמים."
+      ]
+    },
+    {
+      "id": 1,
+      "type": "ComfyUIPixtralLarge",
+      "pos": [
+        2431,
+        751
+      ],
+      "size": [
+        315,
+        154
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 8
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "link": 14,
+          "widget": {
+            "name": "prompt"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            7
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ComfyUIPixtralLarge"
+      },
+      "widgets_values": [
+        "Describe the image",
+        "",
+        0.7,
+        4096,
+        1
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    }
+  ],
+  "links": [
+    [
+      7,
+      1,
+      0,
+      3,
+      0,
+      "STRING"
+    ],
+    [
+      8,
+      7,
+      0,
+      1,
+      0,
+      "IMAGE"
+    ],
+    [
+      9,
+      2,
+      0,
+      7,
+      0,
+      "IMAGE"
+    ],
+    [
+      10,
+      9,
+      0,
+      7,
+      1,
+      "IMAGE"
+    ],
+    [
+      11,
+      8,
+      0,
+      7,
+      2,
+      "IMAGE"
+    ],
+    [
+      14,
+      13,
+      0,
+      1,
+      1,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8769226950000008,
+      "offset": [
+        -1248.572637091538,
+        -561.1917268420835
+      ]
+    }
+  },
+  "version": 0.4
+}
