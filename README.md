@@ -10,6 +10,7 @@ A ComfyUI custom node that integrates Mistral AI's Pixtral Large vision model, e
 - 📊 Support for documents, charts, and natural images
 - 🌐 128K context window for extensive image processing
 - 🔤 Multilingual capabilities including:
+
   - English
   - Hebrew (עברית)
   - Arabic (العربية)
@@ -25,15 +26,9 @@ A ComfyUI custom node that integrates Mistral AI's Pixtral Large vision model, e
 1. Clone this repository into your ComfyUI's custom_nodes directory:
 ```bash
 cd ComfyUI/custom_nodes
-git clone https://github.com/yourusername/ComfyUI_pixtral_large.git
+https://github.com/ShmuelRonen/ComfyUI_pixtral_large.git
 ```
-
-2. Install the required dependencies:
-```bash
-pip install requests Pillow torch
-```
-
-3. Restart ComfyUI
+2. Restart ComfyUI
 
 ## Included Nodes
 
@@ -209,14 +204,4 @@ If you encounter any issues or have questions:
 1. Check the [Issues](https://github.com/yourusername/ComfyUI_pixtral_large/issues) page
 2. Create a new issue if needed
 
-## Future Plans
 
-- [ ] Add support for batch processing
-- [ ] Implement more advanced parameter controls
-- [ ] Add example workflows for different languages
-- [ ] Create detailed documentation with multilingual examples
-- [ ] Enhance RTL language support in the UI
-- [ ] Add language-specific preprocessing options
-- [ ] Implement advanced image preprocessing nodes
-- [ ] Add custom visualization options for Preview Text
-- [ ] Create node presets for common use cases
