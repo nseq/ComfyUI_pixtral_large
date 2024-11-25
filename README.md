@@ -2,6 +2,11 @@
 
 A ComfyUI custom node that integrates Mistral AI's Pixtral Large vision model, enabling powerful multimodal AI capabilities within ComfyUI. Pixtral Large is a 124B parameter model (123B decoder + 1B vision encoder) that can analyze up to 30 high-resolution images simultaneously.
 
+![pixtral large 1](https://github.com/user-attachments/assets/bf3b64bc-28c6-47df-b63d-d554ce57c8f6)
+
+![pixtral large 3](https://github.com/user-attachments/assets/8860463e-3f38-4e1d-87d8-91b88699c558)
+
+
 ## Features
 
 - 🖼️ Process up to 30 high-resolution images in a single request
