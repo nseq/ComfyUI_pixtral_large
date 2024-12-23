@@ -1,0 +1,25 @@
+[project]
+name = "comfyui-pixtral-large"
+version = "0.1.0"
+description = "A ComfyUI custom node that integrates Mistral AI's Pixtral Large vision model, enabling multimodal analysis capabilities within ComfyUI"
+authors = [
+    { name = "Shmuel Ronen" }
+]
+requires-python = ">=3.10"
+readme = "README.md"
+license = { text = "MIT" }
+dependencies = [
+    "requests",
+    "pillow",
+    "torch",
+    "numpy"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pre-commit>=4.0.1"
+]
+
+[tool.comfy-nodes]
+publisher = "@shmuel"
