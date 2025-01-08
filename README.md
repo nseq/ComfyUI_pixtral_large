@@ -159,10 +159,10 @@ prompt = "תאר את התמונה בעברית"
 prompt = "Analyze this image and provide the response in Hebrew (עברית)"
 ```
 
-## API Key Setup
-
-1. Get your API key from [Mistral AI Platform](https://console.mistral.ai/)
-2. Enter the key in the Pixtral Large node's `api_key` field
+## Getting the free API Key
+1. Visit [Mistral AI](https://mistral.ai/) and sign up or log into your account.
+2. Navigate to the API section and follow the instructions to generate a new API key.
+3. Once you have your API key, enter it into the node configuration as described in the setup instructions.
 
 ## Error Handling
 
