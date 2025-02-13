@@ -8,21 +8,35 @@ app.registerExtension({
                 this.addWidget("button", "Update inputs", null, () => {
                     this.updateInputs();
                 });
+                
+                // Add input type selector widget
+                this.addWidget("combo", "Input Type", "image", () => {
+                    this.updateInputs();
+                }, { values: ["image", "text", "both"] });
             };
 
             nodeType.prototype.updateInputs = function () {
                 const targetNumberOfInputs = this.widgets.find(
                     (w) => w.name === "inputcount"
                 ).value;
+                
+                const inputType = this.widgets.find(
+                    (w) => w.name === "Input Type"
+                ).value;
 
-                // Remove extra inputs
-                while (this.inputs.length > targetNumberOfInputs) {
+                // Remove all existing inputs
+                while (this.inputs.length > 0) {
                     this.removeInput(this.inputs.length - 1);
                 }
 
-                // Add new inputs
-                while (this.inputs.length < targetNumberOfInputs) {
-                    this.addInput(`image_${this.inputs.length + 1}`, "IMAGE");
+                // Add new inputs based on selected type
+                for (let i = 1; i <= targetNumberOfInputs; i++) {
+                    if (inputType === "image" || inputType === "both") {
+                        this.addInput(`image_${i}`, "IMAGE");
+                    }
+                    if (inputType === "text" || inputType === "both") {
+                        this.addInput(`text_${i}`, "STRING");
+                    }
                 }
 
                 // Trigger a node size recalculation
