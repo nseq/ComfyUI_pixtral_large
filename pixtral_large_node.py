@@ -53,42 +53,45 @@ class MultiImagesInput:
         return {
             "required": {
                 "inputcount": ("INT", {"default": 2, "min": 2, "max": 30, "step": 1}),
+                "input_type": (["image", "text", "both"], {"default": "image"}),
             },
             "optional": {
                 "image_1": ("IMAGE",),
                 "image_2": ("IMAGE",),
+                "text_1": ("STRING", {"default": ""}),
+                "text_2": ("STRING", {"default": ""}),
             }
         }
 
-    RETURN_TYPES = ("IMAGE",)
-    RETURN_NAMES = ("images",)
+    RETURN_TYPES = ("IMAGE", "STRING",)
+    RETURN_NAMES = ("images", "texts",)
     FUNCTION = "combine"
     CATEGORY = "ComfyUI/Pixtral Large"
 
-    DESCRIPTION = """
-    Creates an image batch from multiple images.
-    Pixtral Large can handle up to 30 high-resolution images in its 128K context window.
-    Set the number of inputs with **inputcount** and click update.
-    """
-
-    def combine(self, inputcount, **kwargs):
+    def combine(self, inputcount, input_type, **kwargs):
         from nodes import ImageBatch
-
-        image_batch_node = ImageBatch()
-        images = [kwargs[f"image_{i}"] for i in range(1, inputcount + 1) if f"image_{i}" in kwargs]
         
-        if len(images) < 2:
-            raise ValueError(f"At least 2 images are required. Only {len(images)} provided.")
+        images = []
+        texts = []
         
-        if len(images) > 30:
-            raise ValueError(f"Pixtral Large supports up to 30 images. {len(images)} provided.")
+        if input_type in ["image", "both"]:
+            images = [kwargs[f"image_{i}"] for i in range(1, inputcount + 1) 
+                     if f"image_{i}" in kwargs and kwargs[f"image_{i}"] is not None]
+            
+            if images:
+                image_batch_node = ImageBatch()
+                result = images[0]
+                for image in images[1:]:
+                    if image is not None:
+                        (result,) = image_batch_node.batch(result, image)
+                images = result
         
-        result = images[0]
-        for image in images[1:]:
-            if image is not None:
-                (result,) = image_batch_node.batch(result, image)
+        if input_type in ["text", "both"]:
+            texts = [kwargs[f"text_{i}"] for i in range(1, inputcount + 1) 
+                    if f"text_{i}" in kwargs and kwargs[f"text_{i}"] is not None]
+            texts = " ".join(texts)  # or handle texts differently as needed
         
-        return (result,)
+        return (images, texts,)
 
 class ComfyUIPixtralLarge:
     @classmethod
